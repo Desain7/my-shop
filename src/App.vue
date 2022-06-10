@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <index></index>
+    <router-view></router-view>
+    <footerIndex v-show="this.$route.meta.footerShow"></footerIndex>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import index from './components/Header/index.vue'
+import footerIndex from './components/Footer/index.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    index,
+    footerIndex
   }
 }
 </script>
