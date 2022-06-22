@@ -34,7 +34,9 @@
                 <div class="searchArea">
                     <form action="###" class="searchForm">
                         <input type="text" id="autocomplete" class="input-error input-xxlarge" />
-                        <button class="sui-btn btn-xlarge btn-danger" type="button">搜索</button>
+                        <router-link to="/search">
+                            <button class="sui-btn btn-xlarge btn-danger" type="button">搜索</button>
+                        </router-link>
                     </form>
                 </div>
             </div>
