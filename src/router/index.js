@@ -10,22 +10,26 @@ Vue.use(Router)
 export default new Router({
     routes: [
         {
+            name: 'home',
             path: '/home',
             component:Home,
             meta:{footerShow:true} //路由元信息
         },
         {
+            name: 'login',
             path: '/login',
             component:Login,
             meta:{footerShow:false}
         },
         {
+            name:'register',
             path: '/register',
             component:Register,
             meta:{footerShow:false}
         },
         {
-            path: '/search',
+            name:'search',
+            path: '/search/:key',
             component:Search,
             meta:{footerShow:true}
         },

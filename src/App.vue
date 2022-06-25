@@ -15,7 +15,10 @@ export default {
   components: {
     index,
     footerIndex
-  }
+  },
+  mounted() {
+    this.$store.dispatch("categoryList");
+  },
 }
 </script>
 
