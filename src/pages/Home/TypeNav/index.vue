@@ -92,18 +92,21 @@ export default {
       }
     },
     show() {
-      if (this.$router.path != "/home") {
+      let path = this.$router.currentRoute.path
+      if (path != "/home") {
         this.showNav = true;
       }
     },
     hide() {
-      if (this.$router.path != "/home") {
+      let path = this.$router.currentRoute.path
+      if (path != "/home" && path != "/") {
         this.showNav = false;
       }
     },
   },
   mounted() {
-    if (this.$router.path != "/home") {
+    let path = this.$router.currentRoute.path
+    if (path != "/home" && path != "/") {
       this.showNav = false;
     }
   },

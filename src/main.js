@@ -6,6 +6,10 @@ import router from './router'
 import TypeNav from './pages/Home/TypeNav'
 import store from './store'
 
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+Vue.use(ElementUI)
+
 Vue.component(TypeNav.name, TypeNav)
 Vue.config.productionTip = false
 
