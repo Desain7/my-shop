@@ -3,7 +3,7 @@
     <TypeNav/>
     <ListContainer/>
     <TodayRecommend/>
-    <Floor/>
+    <Floor v-for="item in floorList" :key="item.id" :list='item'/>
     <Rank/>
     <Brand/>
     <Like/>
@@ -20,6 +20,7 @@ import Like from "@/pages/Home/Like"
 import ListContainer from "@/pages/Home/ListContainer"
 import Rank from "@/pages/Home/Rank"
 import TodayRecommend from "@/pages/Home/TodayRecommend"
+import {mapState} from "vuex"
 
 export default {
   name: 'MyHome',
@@ -31,7 +32,17 @@ export default {
     ListContainer,
     Rank,
     TodayRecommend
+  },
+
+  mounted() {
+    this.$store.dispatch('getFloorList')
+  },
+  computed:{
+    ...mapState({
+      floorList: state => state.home.floorList
+    })
   }
+
 }
 </script>
 

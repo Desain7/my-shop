@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex' 
-import {reqCategoryList,reqGetBannerList} from "@/api"
+import {reqCategoryList,reqGetBannerList,reqFloorList} from "@/api"
 
 Vue.use(Vuex)
 
@@ -8,6 +8,7 @@ export default{
     state:{
         categoryList:[],
         bannerList:[],
+        floorList:[],
 
     },
     mutations:{
@@ -17,6 +18,9 @@ export default{
         BANNERLIST(state, bannerList) {
             state.bannerList = bannerList
         },
+        FLOORLIST(state, floorList) {
+            state.floorList = floorList
+        }
     },
     actions:{
         async categoryList({commit}) {
@@ -29,6 +33,12 @@ export default{
             let result = await reqGetBannerList()
             if (result.code == 200) {
                 commit("BANNERLIST", result.data)
+            }
+        },
+        async getFloorList({commit}) {
+            let result = await reqFloorList()
+            if(result.code == 200) {
+                commit("FLOORLIST", result.data)
             }
         }
     },

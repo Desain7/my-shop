@@ -6,3 +6,11 @@ export const reqCategoryList = () => {
 }
 
 export const reqGetBannerList = () => mockRequests.get('/banner')
+
+export const reqFloorList = () => mockRequests.get('/floor')
+
+export const reqGetSearchInfo = (params) => request({
+    url:'/list',
+    method:'post',
+    data:params,
+})
